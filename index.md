@@ -1,5 +1,5 @@
 ---
-title: "Sample Documentation Site Jekyll"
+title: "Sample Documentation Site built with Jekyll"
 keywords: sample homepage
 tags: [getting_started]
 sidebar: mydoc_sidebar
