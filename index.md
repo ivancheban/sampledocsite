@@ -11,7 +11,7 @@ summary: These brief instructions will help you get started quickly with the the
 
 ## Build the Theme
 
-Follow these instructions to build the theme.
+Follow these instructions to build this <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.jekyll_platform}}">Jekyll</a> theme.
 
 ### 1. Download the theme
 
