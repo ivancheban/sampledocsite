@@ -20,11 +20,11 @@ topnav_dropdowns:
           external_url: http://jekyllrb.com/docs/home/
         - title: Jekyll on Stack Overflow
           external_url: http://stackoverflow.com/questions/tagged/jekyll
-        - title: Jekyll on my blog
+        - title: Jekyll on Tom's blog
           external_url: http://idratherbewriting.com/category-jekyll/
     - title: Products
       folderitems:
-        - title: Jekyll Documentation Theme
+        - title: Sample documentation site
           url: /mydoc_introduction.html
         - title: Product 1
           url: /p1_landing_page.html
