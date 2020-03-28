@@ -11,6 +11,29 @@ summary: These brief instructions will help you get started quickly with the the
 
 {% include tip.html content="This is an example of a tip." %}
 
+<ul id="profileTabs" class="nav nav-tabs">
+    <li class="active"><a class="noCrossRef" href="#desktop" data-toggle="tab">Desktop</a></li>
+    <li><a class="noCrossRef" href="#web" data-toggle="tab">Web</a></li>
+    <li><a class="noCrossRef" href="#mobile" data-toggle="tab">Mobile</a></li>
+</ul>
+  <div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="profile" markdown="1">
+## Desktop
+
+Sample desktop text.
+
+</div>
+
+<div role="tabpanel" class="tab-pane" id="about">
+    <h2>Web</h2>
+    <p>Sample web text.</p></div>
+
+<div role="tabpanel" class="tab-pane" id="match">
+    <h2>Mobile</h2>
+    <p>Sample mobile text.</p>
+</div>
+</div>
+
 ## Build the Theme
 
 Follow these instructions to build this <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.jekyll_platform}}">Jekyll</a> theme.
