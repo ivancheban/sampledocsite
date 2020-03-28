@@ -127,19 +127,6 @@ Oranges | A spherical, orange-colored sweet fruit commonly grown in Florida and 
 
 <div class="datatable-end"></div>
 
-<br/><br/>
-
-<div class="datatable-begin"></div>
-
-Term    | Definition                                                                                        
-------- | ------------------------------------------------------------------------------------------------- 
-Apples  | A small, somewhat round and often red-colored, crispy fruit grown on trees.                       
-Bananas | A long and curved, often-yellow, sweet and soft fruit that grows in bunches in tropical climates.
-
-<div class="datatable-end"></div>
-
-<br/><br/>
-
 Notice a few features:
 
 * You can keyword search the table. When you type a word, the table filters to match your word.

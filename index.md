@@ -9,31 +9,6 @@ summary: These brief instructions will help you get started quickly with the the
 
 {% include note.html content="If you're cloning this theme, you're probably writing documentation of some kind. I have a blog on technical writing here called <a alt='technical writing blog' href='http://idratherbewriting.com'>I'd Rather Be Writing</a>. If you'd like to stay updated with the latest trends, best practices, and other methods for writing documentation, consider <a href='https://tinyletter.com/tomjoht'>subscribing</a>. I also have a site on <a href='http://idratherbewriting.com/learnapidoc'>writing API documentation</a>." %}
 
-{% include tip.html content="This is an example of a tip." %}
-
-<ul id="profileTabs" class="nav nav-tabs">
-    <li class="active"><a class="noCrossRef" href="#desktop" data-toggle="tab">Desktop</a></li>
-    <li><a class="noCrossRef" href="#web" data-toggle="tab">Web</a></li>
-    <li><a class="noCrossRef" href="#mobile" data-toggle="tab">Mobile</a></li>
-</ul>
-  <div class="tab-content">
-<div role="tabpanel" class="tab-pane active" id="profile" markdown="1">
-## Desktop
-
-Sample desktop text.
-
-</div>
-
-<div role="tabpanel" class="tab-pane" id="web">
-    <h2>Web</h2>
-    <p>Sample web text.</p></div>
-
-<div role="tabpanel" class="tab-pane" id="mobile">
-    <h2>Mobile</h2>
-    <p>Sample mobile text.</p>
-</div>
-</div>
-
 ## Build the Theme
 
 Follow these instructions to build this <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.jekyll_platform}}">Jekyll</a> theme.
