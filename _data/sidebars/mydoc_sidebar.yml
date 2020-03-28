@@ -28,8 +28,8 @@ entries:
       output: web, pdf
       type: homepage
 
-    - title: Introduction
-      url: /mydoc_introduction.html
+    - title: Experiment
+      url: /mydoc_experiment.html
       output: web, pdf
 
     - title: Supported features
