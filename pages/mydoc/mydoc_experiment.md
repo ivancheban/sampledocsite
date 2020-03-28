@@ -1,6 +1,7 @@
 ---
 title: Experiment
 sidebar: mydoc_sidebar
+datatable: true
 permalink: mydoc_experiment.html
 folder: mydoc
 ---
