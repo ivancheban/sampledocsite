@@ -24,11 +24,11 @@ Sample desktop text.
 
 </div>
 
-<div role="tabpanel" class="tab-pane" id="about">
+<div role="tabpanel" class="tab-pane" id="web">
     <h2>Web</h2>
     <p>Sample web text.</p></div>
 
-<div role="tabpanel" class="tab-pane" id="match">
+<div role="tabpanel" class="tab-pane" id="mobile">
     <h2>Mobile</h2>
     <p>Sample mobile text.</p>
 </div>
