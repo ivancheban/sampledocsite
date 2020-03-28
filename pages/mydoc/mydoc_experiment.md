@@ -14,7 +14,7 @@ folder: mydoc
     <li><a class="noCrossRef" href="#mobile" data-toggle="tab">Mobile</a></li>
 </ul>
   <div class="tab-content">
-<div role="tabpanel" class="tab-pane active" id="profile" markdown="1">
+<div role="tabpanel" class="tab-pane active" id="desktop" markdown="1">
 
 ## Desktop
 
