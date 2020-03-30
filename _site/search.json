@@ -160,6 +160,17 @@
 
 
 {
+"title": "Experiment",
+"tags": "",
+"keywords": "",
+"url": "mydoc_experiment.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "FAQ layout",
 "tags": "special_layouts",
 "keywords": "frequently asked questions, FAQ, question and answer, collapsible sections, expand, collapse",
@@ -252,17 +263,6 @@
 "tags": "",
 "keywords": "jekyll on windows, pc, ruby, ruby dev kit",
 "url": "mydoc_install_jekyll_on_windows.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Introduction",
-"tags": "",
-"keywords": "",
-"url": "mydoc_introduction.html",
 "summary": ""
 }
 ,

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Introduction | Sample Documentation Site</title>
+<title>Experiment | Sample Documentation Site</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -41,7 +41,7 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 
-<link rel="alternate" type="application/rss+xml" title="sampledocsite" href="ivancheban.github.io/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="sampledocsite" href="http://localhost:4000/feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -90,6 +90,25 @@
                 $("#tg-sb-icon").toggleClass('fa-toggle-off');
             });
         });
+    </script>
+    
+    <!-- Include the standard DataTables bits -->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+    <!-- First, this walks through the tables that occur between ...-begin
+         and ...-end and add the "datatable" class to them.
+         Then it invokes DataTable's standard initializer
+         Credit here: http://www.beardedhacker.com/blog/2015/08/28/add-class-attribute-to-markdown-table/
+      -->
+    <script>
+      $(document).ready(function(){
+          $('div.datatable-begin').nextUntil('div.datatable-end', 'table').addClass('display');
+          $('table.display').DataTable( {
+              paging: true,
+              stateSave: true,
+              searching: true
+          });
+       });
     </script>
     
 
@@ -159,7 +178,7 @@
                     <ul class="dropdown-menu">
                         
                         
-                        <li class="dropdownActive"><a href="mydoc_introduction.html">Sample documentation site</a></li>
+                        <li><a href="mydoc_introduction.html">Sample documentation site</a></li>
                         
                         
                         
@@ -179,7 +198,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:ivancheban@gmail.com?subject=Sample Documentation Site feedback&body=I have some feedback about the Introduction page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:ivancheban@gmail.com?subject=Sample Documentation Site feedback&body=I have some feedback about the Experiment page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -197,7 +216,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Introduction">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Experiment">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -242,7 +261,7 @@
           
           
           
-          <li class="active"><a title="Introduction" href="mydoc_introduction.html">Introduction</a></li>
+          <li class="active"><a title="Experiment" href="mydoc_experiment.html">Experiment</a></li>
           
           
           
@@ -732,7 +751,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Introduction</h1>
+   <h1 class="post-title-main">Experiment</h1>
 </div>
 
 
@@ -769,29 +788,58 @@ $('#toc').on('click', 'a', function() {
 
     
 
-   <h2 id="overview">Overview</h2>
+   <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> This is an example of a tip.</div>
 
-<p>This site provides documentation, training, and other notes for the Jekyll Documentation theme. There’s a lot of information about how to do a variety of things here, and it’s not all unique to this theme. But by and large, understanding how to do things in Jekyll depends on how your theme is coded. As a result, these additional details are provided.</p>
-
-<p>The instructions here are geared towards technical writers working on documentation. You may have a team of one or more technical writers working on documentation for multiple projects. You can use this same theme to author all of your documentation for each of your products. The theme is built to accommodate documentation for multiple products on the same site.</p>
-
-<h2 id="survey-of-features">Survey of features</h2>
-
-<p>Some of the more prominent features of this theme include the following:</p>
-
-<ul>
-  <li>Bootstrap framework</li>
-  <li><a href="http://www.komposta.net/article/navgoco">Navgoco multi-level sidebar</a> for table of contents</li>
-  <li>Ability to specify different sidebars for different products</li>
-  <li>Top navigation bar with drop-down menus</li>
-  <li>Notes, tips, and warning information notes</li>
-  <li>Tags for alternative navigation</li>
-  <li>Advanced landing page layouts from the <a href="http://startbootstrap.com/template-overviews/modern-business/">Modern Business theme</a>.</li>
+<ul id="profileTabs" class="nav nav-tabs">
+    <li class="active"><a class="noCrossRef" href="#desktop" data-toggle="tab">Desktop</a></li>
+    <li><a class="noCrossRef" href="#web" data-toggle="tab">Web</a></li>
+    <li><a class="noCrossRef" href="#mobile" data-toggle="tab">Mobile</a></li>
 </ul>
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="desktop">
 
-<h2 id="getting-started">Getting started</h2>
+    <h2 id="desktop">Desktop</h2>
 
-<p>To get started, see <a href="index.html">Getting Started</a>.</p>
+    <p>Sample desktop text.</p>
+
+  </div>
+
+<div role="tabpanel" class="tab-pane" id="web">
+    <h2>Web</h2>
+    <p>Sample web text.</p></div>
+
+<div role="tabpanel" class="tab-pane" id="mobile">
+    <h2>Mobile</h2>
+    <p>Sample mobile text.</p>
+</div>
+</div>
+
+<p><br /><br /></p>
+
+<div class="datatable-begin"></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Apples</td>
+      <td>A small, somewhat round and often red-colored, crispy fruit grown on trees.</td>
+    </tr>
+    <tr>
+      <td>Bananas</td>
+      <td>A long and curved, often-yellow, sweet and soft fruit that grows in bunches in tropical climates.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="datatable-end"></div>
+
+<p><br /><br /></p>
 
 
 
@@ -810,7 +858,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Your company. All rights reserved. <br />
- Site last generated: Mar 26, 2020 <br />
+ Site last generated: Mar 30, 2020 <br />
 <p><img src="images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
