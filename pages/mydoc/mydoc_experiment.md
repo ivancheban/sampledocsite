@@ -2,6 +2,10 @@
 title: Experiment
 sidebar: mydoc_sidebar
 datatable: true
+summary: "This page is for my experiments with the Jekyll theme."
+tags: [getting_started, formatting]
+keywords: notes, tips, datatable
+toc: false
 permalink: mydoc_experiment.html
 folder: mydoc
 ---
