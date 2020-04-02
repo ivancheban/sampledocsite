@@ -13,8 +13,8 @@ folder: mydoc
 {% include tip.html content="This is an example of a tip." %}
 
 <ul id="profileTabs" class="nav nav-tabs">
-    <li class="noCrossRef"><a class="noCrossRef" href="#desktop" data-toggle="tab">Desktop</a></li>
-    <li><a class="active" href="#web" data-toggle="tab">Web</a></li>
+    <li class="active"><a class="noCrossRef" href="#web" data-toggle="tab">Web</a></li>
+    <li><a class="noCrossRef" href="#desktop" data-toggle="tab">Desktop</a></li>
     <li><a class="noCrossRef" href="#mobile" data-toggle="tab">Mobile</a></li>
 </ul>
   <div class="tab-content">
