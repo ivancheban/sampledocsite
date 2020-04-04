@@ -11,7 +11,7 @@ folder: mydoc
 ---
 This is an example of syntax highlighting.
 
-css
+```css
 html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
