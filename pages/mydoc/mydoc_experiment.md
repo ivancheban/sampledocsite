@@ -9,6 +9,37 @@ toc: false
 permalink: mydoc_experiment.html
 folder: mydoc
 ---
+This is an example of syntax highlighting.
+
+```css
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%
+}
+
+body {
+    margin: 0
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block
+}
+```
+
+
 
 {% include tip.html content="This is an example of a tip." %}
 
