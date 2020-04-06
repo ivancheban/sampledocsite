@@ -9,6 +9,7 @@
 <title>Themes | Sample Documentation Site</title>
 <link rel="stylesheet" href="css/syntax.css">
 
+<link rel="stylesheet" href="/sampledocsite/css/prism.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
 <link rel="stylesheet" href="css/modern-business.css">
@@ -776,10 +777,10 @@ $('#toc').on('click', 'a', function() {
 <h2 id="theme-options">Theme options</h2>
 <p>You can choose a green or blue theme, or you can create your own. In the css folder, there are two theme files: theme-blue.css and theme-green.css. These files have the most common CSS elements extracted in their own CSS file. Just change the hex colors to the ones you want.</p>
 
-<p>In the _includes/head.html file, specify the theme file you want the output to use — for example, <code class="language-plaintext highlighter-rouge">theme_file: theme-green.css</code>. See this line:</p>
+<p>In the _includes/head.html file, specify the theme file you want the output to use — for example, <code>theme_file: theme-green.css</code>. See this line:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"css/theme-green.css"</span> <span class="nt">/&gt;</span>
-</code></pre></div></div>
+<pre><code class="language-html">&lt;link rel="stylesheet" href="css/theme-green.css" /&gt;
+</code></pre>
 
 <h2 id="theme-differences">Theme differences</h2>
 <p>The differences between the themes is fairly minimal. The main navigation bar, sidebar, buttons, and heading colors change color. That’s about it.</p>
@@ -811,10 +812,11 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Your company. All rights reserved. <br />
-<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Apr 3, 2020 <br />
+<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Apr 6, 2020 <br />
 <p><img src="images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
+<script src="/sampledocsite/js/prism.js"></script>
 </footer>
 
 
@@ -827,5 +829,12 @@ $('#toc').on('click', 'a', function() {
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162550995-2','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>

@@ -9,6 +9,7 @@
 <title>YAML tutorial in the context of Jekyll | Sample Documentation Site</title>
 <link rel="stylesheet" href="css/syntax.css">
 
+<link rel="stylesheet" href="/sampledocsite/css/prism.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
 <link rel="stylesheet" href="css/modern-business.css">
@@ -819,18 +820,18 @@ margin-bottom: 10px;
 
 <p><strong>YAML:</strong></p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span>
-  <span class="na">husband</span><span class="pi">:</span> <span class="s">Tom</span>
-  <span class="na">wife</span><span class="pi">:</span> <span class="s">Shannon</span>
-</code></pre></div></div>
+<pre><code class="language-yaml">name:
+  husband: Tom
+  wife: Shannon
+</code></pre>
 
 <p><strong>Markdown + Liquid:</strong></p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p&gt;Husband's name: <span class="p">{{</span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">samplelist</span><span class="p">.</span><span class="nv">name</span><span class="p">.</span><span class="nv">husband</span><span class="p">}}</span>&lt;/p&gt;
-&lt;p&gt;Wife's name: <span class="p">{{</span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">samplelist</span><span class="p">.</span><span class="nv">name</span><span class="p">.</span><span class="nv">wife</span><span class="p">}}</span>&lt;/p&gt;
-</code></pre></div></div>
+<pre><code class="language-liquid">&lt;p&gt;Husband's name: {{site.data.samplelist.name.husband}}&lt;/p&gt;
+&lt;p&gt;Wife's name: {{site.data.samplelist.name.wife}}&lt;/p&gt;
+</code></pre>
 
-<p>Notice that in order to access the data file, you use <code class="language-plaintext highlighter-rouge">site.data.samplelist</code> where as <code class="language-plaintext highlighter-rouge">samplelist</code> is the name of the YAML file.</p>
+<p>Notice that in order to access the data file, you use <code>site.data.samplelist</code> where as <code>samplelist</code> is the name of the YAML file.</p>
 
 <p><strong>Result:</strong></p>
 
@@ -843,27 +844,27 @@ margin-bottom: 10px;
 
 <p><strong>YAML:</strong></p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">feedback</span><span class="pi">:</span> <span class="pi">&gt;</span>
-  <span class="s">This is my feedback to you.</span>
-  <span class="s">Even if I include linebreaks here,</span>
-  <span class="s">all of the linebreaks will be removed when the value is inserted.</span>
+<pre><code class="language-yaml">feedback: &gt;
+  This is my feedback to you.
+  Even if I include linebreaks here,
+  all of the linebreaks will be removed when the value is inserted.
 
-<span class="na">block</span><span class="pi">:</span> <span class="pi">|</span>
-    <span class="s">This pipe does something a little different.</span>
-    <span class="s">It preserves the breaks.</span>
-    <span class="s">This is really helpful for code samples,</span>
-    <span class="s">since you can format the code samples with</span>
-       <span class="s">the appropriate</span>
-</code></pre></div></div>
+block: |
+    This pipe does something a little different.
+    It preserves the breaks.
+    This is really helpful for code samples,
+    since you can format the code samples with
+       the appropriate
+</code></pre>
 
 <p><strong>Markdown:</strong></p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p&gt;&lt;b&gt;Feedback&lt;/b&gt;&lt;/p&gt;
-&lt;p&gt;<span class="p">{{</span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">samplelist</span><span class="p">.</span><span class="nv">feedback</span><span class="p">}}</span>&lt;/p&gt;
+<pre><code class="language-liquid">&lt;p&gt;&lt;b&gt;Feedback&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;{{site.data.samplelist.feedback}}&lt;/p&gt;
 
 &lt;p&gt;&lt;b&gt;Block&lt;/b&gt;&lt;/p&gt;
-&lt;p&gt;<span class="p">{{</span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">samplelist</span><span class="p">.</span><span class="nv">block</span><span class="p">}}</span>&lt;/p&gt;
-</code></pre></div></div>
+&lt;p&gt;{{site.data.samplelist.block}}&lt;/p&gt;
+</code></pre>
 
 <p><strong>Result:</strong></p>
 
@@ -882,28 +883,28 @@ since you can format the code samples with
 </p>
 </div>
 
-<p>The right angle bracket <code class="language-plaintext highlighter-rouge">&gt;</code> allows you to put the value on the next lines (which must be indented). Even if you create a line break, the output will remove all of those line breaks, creating one paragraph.</p>
+<p>The right angle bracket <code>&gt;</code> allows you to put the value on the next lines (which must be indented). Even if you create a line break, the output will remove all of those line breaks, creating one paragraph.</p>
 
-<p>The pipe <code class="language-plaintext highlighter-rouge">|</code> functions like the angle bracket in that it allows you to put the values for the mapping on the next lines (which again must be indented). However, the pipe does preserve all of the line breaks that you use. This makes the pipe method ideal for storing code samples.</p>
+<p>The pipe <code>|</code> functions like the angle bracket in that it allows you to put the values for the mapping on the next lines (which again must be indented). However, the pipe does preserve all of the line breaks that you use. This makes the pipe method ideal for storing code samples.</p>
 
 <h2 id="example-3-simple-list">Example 3: Simple list</h2>
 
 <p><strong>YAML</strong>:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">bikes</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">mountain bikes</span>
-  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">road bikes</span>
-  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">hybrid bikes</span>
-</code></pre></div></div>
+<pre><code class="language-yaml">bikes:
+  - title: mountain bikes
+  - title: road bikes
+  - title: hybrid bikes
+</code></pre>
 
 <p><strong>Markdown + Liquid:</strong></p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ul&gt;
-<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.data.samplelist.bikes</span><span class="w"> </span><span class="p">%}</span>
-&lt;li&gt;<span class="p">{{</span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="p">}}</span>&lt;/li&gt;
-<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+<pre><code class="language-liquid">&lt;ul&gt;
+{% for item in site.data.samplelist.bikes %}
+&lt;li&gt;{{item.title}}&lt;/li&gt;
+{% endfor %}
 &lt;/ul&gt;
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Result:</strong></p>
 
@@ -919,23 +920,23 @@ since you can format the code samples with
 </ul>
 </div>
 
-<p>Here we use a “for” loop to get each item in the bikes list. By using <code class="language-plaintext highlighter-rouge">.title</code> we only get the <code class="language-plaintext highlighter-rouge">title</code> property from each list item.</p>
+<p>Here we use a “for” loop to get each item in the bikes list. By using <code>.title</code> we only get the <code>title</code> property from each list item.</p>
 
 <h2 id="example-4-list-items">Example 4: List items</h2>
 
 <p><strong>YAML:</strong></p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">salesteams</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Regions</span>
- <span class="na">subfolderitems</span><span class="pi">:</span>
-   <span class="pi">-</span> <span class="na">location</span><span class="pi">:</span> <span class="s">US</span>
-   <span class="pi">-</span> <span class="na">location</span><span class="pi">:</span> <span class="s">Spain</span>
-   <span class="pi">-</span> <span class="na">location</span><span class="pi">:</span> <span class="s">France</span>
-</code></pre></div></div>
+<pre><code class="language-yaml">salesteams:
+- title: Regions
+ subfolderitems:
+   - location: US
+   - location: Spain
+   - location: France
+</code></pre>
 
 <p><strong>Markdown + Liquid:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% for item in site.data.samplelist.salesteams %}
+<pre><code>{% for item in site.data.samplelist.salesteams %}
 &lt;h3&gt;{{item.title}}&lt;/h3&gt;
 &lt;ul&gt;
 {% for entry in item.subfolderitems %}
@@ -943,7 +944,7 @@ since you can format the code samples with
 {% endfor %}
 &lt;/ul&gt;
 {% endfor %}
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Result:</strong></p>
 
@@ -962,43 +963,43 @@ since you can format the code samples with
 
 </div>
 
-<p>Hopefully you can start to see how to wrap more complex formatting around the YAML content. When you use a “for” loop, you choose the variable of what to call the list items. The variable you choose to use becomes how you access the properties of each list item. In this case, I decided to use the variable <code class="language-plaintext highlighter-rouge">item</code>. In order to get each property of the list item, I used <code class="language-plaintext highlighter-rouge">item.subfolderitems</code>.</p>
+<p>Hopefully you can start to see how to wrap more complex formatting around the YAML content. When you use a “for” loop, you choose the variable of what to call the list items. The variable you choose to use becomes how you access the properties of each list item. In this case, I decided to use the variable <code>item</code>. In order to get each property of the list item, I used <code>item.subfolderitems</code>.</p>
 
-<p>Each list item starts with the hyphen <code class="language-plaintext highlighter-rouge">–</code>.  You cannot directly access the list item by referring to a mapping. You only loop through the list items. If you wanted to access the list item, you would have to use something like <code class="language-plaintext highlighter-rouge">[1]</code>, which is how you access the position in an array. You cannot access a list item like you can access a mapping key.</p>
+<p>Each list item starts with the hyphen <code>–</code>.  You cannot directly access the list item by referring to a mapping. You only loop through the list items. If you wanted to access the list item, you would have to use something like <code>[1]</code>, which is how you access the position in an array. You cannot access a list item like you can access a mapping key.</p>
 
 <h2 id="example-5-table-of-contents">Example 5: Table of contents</h2>
 
 <p><strong>YAML:</strong></p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">toc</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Group </span><span class="m">1</span>
-    <span class="na">subfolderitems</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Thing </span><span class="m">1</span>
-      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Thing </span><span class="m">2</span>
-      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Thing </span><span class="m">3</span>
-  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Group </span><span class="m">2</span>
-    <span class="na">subfolderitems</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Piece </span><span class="m">1</span>
-      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Piece </span><span class="m">2</span>
-      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Piece </span><span class="m">3</span>
-  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Group </span><span class="m">3</span>
-    <span class="na">subfolderitems</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Widget </span><span class="m">1</span>
-      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Widget 2 it's</span>
-      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Widget </span><span class="m">3</span>
-</code></pre></div></div>
+<pre><code class="language-yaml">toc:
+  - title: Group 1
+    subfolderitems:
+      - page: Thing 1
+      - page: Thing 2
+      - page: Thing 3
+  - title: Group 2
+    subfolderitems:
+      - page: Piece 1
+      - page: Piece 2
+      - page: Piece 3
+  - title: Group 3
+    subfolderitems:
+      - page: Widget 1
+      - page: Widget 2 it's
+      - page: Widget 3
+</code></pre>
 
 <p><strong>Markdown + Liquid:</strong></p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.data.samplelist.toc</span><span class="w"> </span><span class="p">%}</span>
-&lt;h3&gt;<span class="p">{{</span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="p">}}</span>&lt;/h3&gt;
+<pre><code class="language-liquid">{% for item in site.data.samplelist.toc %}
+&lt;h3&gt;{{item.title}}&lt;/h3&gt;
 &lt;ul&gt;
-<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">entry</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">item.subfolderitems</span><span class="w"> </span><span class="p">%}</span>
-&lt;li&gt;<span class="p">{{</span><span class="nv">entry</span><span class="p">.</span><span class="nv">page</span><span class="p">}}</span>&lt;/li&gt;
-<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+{% for entry in item.subfolderitems %}
+&lt;li&gt;{{entry.page}}&lt;/li&gt;
+{% endfor %}
 &lt;/ul&gt;
-<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
-</code></pre></div></div>
+{% endfor %}
+</code></pre>
 
 <p><strong>Result:</strong></p>
 
@@ -1045,14 +1046,14 @@ since you can format the code samples with
 
 <p><strong>YAML:</strong></p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">something</span><span class="pi">:</span> <span class="nl">&amp;hello</span> <span class="s">Greetings earthling!</span>
-<span class="na">myref</span><span class="pi">:</span> <span class="nv">*hello</span>
-</code></pre></div></div>
+<pre><code class="language-yaml">something: &amp;hello Greetings earthling!
+myref: *hello
+</code></pre>
 
 <p><strong>Markdown:</strong></p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">samplelist</span><span class="p">.</span><span class="nv">myref</span><span class="w"> </span><span class="p">}}</span>
-</code></pre></div></div>
+<pre><code class="language-liquid">{{ site.data.samplelist.myref }}
+</code></pre>
 
 <p><strong>Result:</strong></p>
 
@@ -1060,9 +1061,9 @@ since you can format the code samples with
 Greetings earthling!
 </div>
 
-<p>This example is notably different. Here I’m showing how to reuse content in YAML file. If you have the same value that you want to repeat in other mappings, you can create a variable using the <code class="language-plaintext highlighter-rouge">&amp;</code> symbol. Then when you want to refer to that variable’s value, you use an asterisk <code class="language-plaintext highlighter-rouge">*</code> followed by the name of the variable.</p>
+<p>This example is notably different. Here I’m showing how to reuse content in YAML file. If you have the same value that you want to repeat in other mappings, you can create a variable using the <code>&amp;</code> symbol. Then when you want to refer to that variable’s value, you use an asterisk <code>*</code> followed by the name of the variable.</p>
 
-<p>In this case the variable is <code class="language-plaintext highlighter-rouge">&amp;hello</code> and its value is <code class="language-plaintext highlighter-rouge">Greetings earthling!</code> In order to reuse that same value, you just type <code class="language-plaintext highlighter-rouge">*hello</code>.</p>
+<p>In this case the variable is <code>&amp;hello</code> and its value is <code>Greetings earthling!</code> In order to reuse that same value, you just type <code>*hello</code>.</p>
 
 <p>I don’t use variables much, but that’s not to say they couldn’t be highly useful. For example, let’s say you put name of the product in parentheses after each title (because you have various products that you’re providing documentation for in the same site). You could create a variable for that product name so that if you change how you’re referring to it, you wouldn’t have to change all instances of it in your YAML file.</p>
 
@@ -1070,24 +1071,24 @@ Greetings earthling!
 
 <p><strong>YAML:</strong></p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">about</span><span class="pi">:</span>
- <span class="pi">-</span> <span class="s">zero</span>
- <span class="pi">-</span> <span class="s">one</span>
- <span class="pi">-</span> <span class="s">two</span>
- <span class="pi">-</span> <span class="s">three</span>
-</code></pre></div></div>
+<pre><code class="language-yaml">about:
+ - zero
+ - one
+ - two
+ - three
+</code></pre>
 
 <p><strong>Markdown:</strong></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{ site.data.samplelist.about[0] }}
-</code></pre></div></div>
+<pre><code>{{ site.data.samplelist.about[0] }}
+</code></pre>
 
 <p><strong>Result:</strong></p>
 <div class="result">
 zero
 </div>
 
-<p>You can see that I’m accessing one of the items in the list using <code class="language-plaintext highlighter-rouge">[0]</code>. This refers to the position in the array where a list item is. Like most programming languages, you start counting at zero, not one.</p>
+<p>You can see that I’m accessing one of the items in the list using <code>[0]</code>. This refers to the position in the array where a list item is. Like most programming languages, you start counting at zero, not one.</p>
 
 <p>I wanted to include this example because it points to the challenge in getting a value from a specific list item. You can’t just call out a specific item in a list like you can with a mapping. This is why you usually iterate through the list items using a “for” loop.</p>
 
@@ -1095,21 +1096,21 @@ zero
 
 <p><strong>YAML:</strong></p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">numbercolors</span><span class="pi">:</span>
- <span class="pi">-</span> <span class="na">zero</span><span class="pi">:</span>
-   <span class="na">properties</span><span class="pi">:</span> <span class="s">red</span>
- <span class="pi">-</span> <span class="na">one</span><span class="pi">:</span>
-   <span class="na">properties</span><span class="pi">:</span> <span class="s">yellow</span>
- <span class="pi">-</span> <span class="na">two</span><span class="pi">:</span>
-   <span class="na">properties</span><span class="pi">:</span> <span class="s">green</span>
- <span class="pi">-</span> <span class="na">three</span><span class="pi">:</span>
-   <span class="na">properties</span><span class="pi">:</span> <span class="s">blue</span>
-</code></pre></div></div>
+<pre><code class="language-yaml">numbercolors:
+ - zero:
+   properties: red
+ - one:
+   properties: yellow
+ - two:
+   properties: green
+ - three:
+   properties: blue
+</code></pre>
 
 <p><strong>Markdown + Liquid:</strong></p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">samplelist</span><span class="p">.</span><span class="nv">numbercolors</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nv">properties</span><span class="w"> </span><span class="p">}}</span>
-</code></pre></div></div>
+<pre><code class="language-liquid">{{ site.data.samplelist.numbercolors[0].properties }}
+</code></pre>
 
 <p><strong>Result:</strong></p>
 <div class="result">
@@ -1122,40 +1123,40 @@ red
 
 <p><strong>YAML:</strong></p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">mypages</span><span class="pi">:</span>
-<span class="pi">-</span> <span class="na">section1</span><span class="pi">:</span> <span class="s">Section </span><span class="m">1</span>
-  <span class="na">audience</span><span class="pi">:</span> <span class="s">developers</span>
-  <span class="na">product</span><span class="pi">:</span> <span class="s">acme</span>
-  <span class="na">url</span><span class="pi">:</span> <span class="s">facebook.com</span>
-<span class="pi">-</span> <span class="na">section2</span><span class="pi">:</span> <span class="s">Section </span><span class="m">2</span>
-  <span class="na">audience</span><span class="pi">:</span> <span class="s">writers</span>
-  <span class="na">product</span><span class="pi">:</span> <span class="s">acme</span>
-  <span class="na">url</span><span class="pi">:</span> <span class="s">google.com</span>
-<span class="pi">-</span> <span class="na">section3</span><span class="pi">:</span> <span class="s">Section </span><span class="m">3</span>
-  <span class="na">audience</span><span class="pi">:</span> <span class="s">developers</span>
-  <span class="na">product</span><span class="pi">:</span> <span class="s">acme</span>
-  <span class="na">url</span><span class="pi">:</span> <span class="s">amazon.com</span>
-<span class="pi">-</span> <span class="na">section4</span><span class="pi">:</span> <span class="s">Section </span><span class="m">4</span>
-  <span class="na">audience</span><span class="pi">:</span> <span class="s">writers</span>
-  <span class="na">product</span><span class="pi">:</span> <span class="s">gizmo</span>
-  <span class="na">url</span><span class="pi">:</span> <span class="s">apple.com</span>
-<span class="pi">-</span> <span class="na">section5</span><span class="pi">:</span> <span class="s">Section </span><span class="m">5</span>
-  <span class="na">audience</span><span class="pi">:</span> <span class="s">writers</span>
-  <span class="na">product</span><span class="pi">:</span> <span class="s">acme</span>
-  <span class="na">url</span><span class="pi">:</span> <span class="s">microsoft.com</span>
-</code></pre></div></div>
+<pre><code class="language-yaml">mypages:
+- section1: Section 1
+  audience: developers
+  product: acme
+  url: facebook.com
+- section2: Section 2
+  audience: writers
+  product: acme
+  url: google.com
+- section3: Section 3
+  audience: developers
+  product: acme
+  url: amazon.com
+- section4: Section 4
+  audience: writers
+  product: gizmo
+  url: apple.com
+- section5: Section 5
+  audience: writers
+  product: acme
+  url: microsoft.com
+</code></pre>
 
 <p><strong>Markdown + Liquid:</strong></p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ul&gt;
-<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">sec</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.data.samplelist.mypages</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">sec</span><span class="p">.</span><span class="nv">audience</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"writers"</span><span class="w"> </span><span class="p">%}</span>
-&lt;li&gt;<span class="p">{{</span><span class="nv">sec</span><span class="p">.</span><span class="nv">url</span><span class="p">}}</span>&lt;/li&gt;
-<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+<pre><code class="language-liquid">&lt;ul&gt;
+{% for sec in site.data.samplelist.mypages %}
+{% if sec.audience == "writers" %}
+&lt;li&gt;{{sec.url}}&lt;/li&gt;
+{% endif %}
+{% endfor %}
 &lt;/ul&gt;
 
-</code></pre></div></div>
+</code></pre>
 
 <p><strong>Result:</strong></p>
 <div class="result">
@@ -1182,16 +1183,16 @@ red
 
 <p>This example shows how you can use conditions in order to selectively get the YAML content. In your table of contents, you might have a lot of different pages. However, you might only want to get the pages for a particular audience. Conditions lets you get only the items that meet those audience attributes.</p>
 
-<p>Now let’s adjust the condition just a little. Let’s add a second condition so that the <code class="language-plaintext highlighter-rouge">audience</code> property has to be <code class="language-plaintext highlighter-rouge">writers</code> and the <code class="language-plaintext highlighter-rouge">product</code> property has to be gizmo. This is how you would write it:</p>
+<p>Now let’s adjust the condition just a little. Let’s add a second condition so that the <code>audience</code> property has to be <code>writers</code> and the <code>product</code> property has to be gizmo. This is how you would write it:</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;ul&gt;
-<span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">sec</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site.data.samplelist.mypages</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="nv">sec</span><span class="p">.</span><span class="nv">audience</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"writers"</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">sec</span><span class="p">.</span><span class="nv">product</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"gizmo"</span><span class="w"> </span><span class="p">%}</span>
-&lt;li&gt;<span class="p">{{</span><span class="nv">sec</span><span class="p">.</span><span class="nv">url</span><span class="p">}}</span>&lt;/li&gt;
-<span class="p">{%</span><span class="w"> </span><span class="kr">endif</span><span class="w"> </span><span class="p">%}</span>
-<span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+<pre><code class="language-liquid">&lt;ul&gt;
+{% for sec in site.data.samplelist.mypages %}
+{% if sec.audience == "writers" and sec.product == "gizmo" %}
+&lt;li&gt;{{sec.url}}&lt;/li&gt;
+{% endif %}
+{% endfor %}
 &lt;/ul&gt;
-</code></pre></div></div>
+</code></pre>
 
 <p>And here is the result:</p>
 
@@ -1242,10 +1243,11 @@ red
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Your company. All rights reserved. <br />
- Site last generated: Apr 3, 2020 <br />
+ Site last generated: Apr 6, 2020 <br />
 <p><img src="images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
+<script src="/sampledocsite/js/prism.js"></script>
 </footer>
 
 
@@ -1258,5 +1260,12 @@ red
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162550995-2','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>

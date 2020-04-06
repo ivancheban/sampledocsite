@@ -9,6 +9,7 @@
 <title>Knowledge-base layout | Sample Documentation Site</title>
 <link rel="stylesheet" href="css/syntax.css">
 
+<link rel="stylesheet" href="/sampledocsite/css/prism.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
 <link rel="stylesheet" href="css/modern-business.css">
@@ -820,18 +821,18 @@
 
 <p>If you don’t want to link to a tag archive index, but instead want to list all pages that have a certain tag, you could use this code:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Getting started pages:
-<span class="nt">&lt;ul&gt;</span>
+<pre><code class="language-html">Getting started pages:
+&lt;ul&gt;
 {% assign sorted_pages = site.pages | sort: 'title' %}
 {% for page in sorted_pages %}
 {% for tag in page.tags %}
 {% if tag == "getting_started" %}
-<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ page.url | remove: "</span><span class="err">/"</span> <span class="err">}}"</span><span class="nt">&gt;</span>{{page.title}}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+&lt;li&gt;&lt;a href="{{ page.url | remove: "/" }}"&gt;{{page.title}}&lt;/a&gt;&lt;/li&gt;
 {% endif %}
 {% endfor %}
 {% endfor %}
-<span class="nt">&lt;/ul&gt;</span>
-</code></pre></div></div>
+&lt;/ul&gt;
+</code></pre>
 
 <p>Here’s the result:</p>
 
@@ -1217,10 +1218,11 @@
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Your company. All rights reserved. <br />
-<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Apr 3, 2020 <br />
+<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Apr 6, 2020 <br />
 <p><img src="images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
+<script src="/sampledocsite/js/prism.js"></script>
 </footer>
 
 
@@ -1233,5 +1235,12 @@
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162550995-2','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>

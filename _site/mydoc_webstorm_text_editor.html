@@ -9,6 +9,7 @@
 <title>WebStorm Text Editor | Sample Documentation Site</title>
 <link rel="stylesheet" href="css/syntax.css">
 
+<link rel="stylesheet" href="/sampledocsite/css/prism.css">
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
 <link rel="stylesheet" href="css/modern-business.css">
@@ -802,7 +803,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="set-tabs-to-4-spaces">Set tabs to 4 spaces</h2>
 
-<p>You can set the default number of spaces a tab sets, including whether Webstorm uses a tab character or spaces. You want spaces, and you want to set this to default number of spaces to <code class="language-plaintext highlighter-rouge">4</code>. Note that this is due to the way Kramdown handles the continuation 
+<p>You can set the default number of spaces a tab sets, including whether Webstorm uses a tab character or spaces. You want spaces, and you want to set this to default number of spaces to <code>4</code>. Note that this is due to the way Kramdown handles the continuation 
 of lists.</p>
 
 <p>To set the indentation, see the “Tabs and Indents” topic in this <a href="https://www.jetbrains.com/help/webstorm/2016.1/code-style-javascript.html?origin=old_help#d658997e132">Code Style. Javascript</a> topic in Webstorm’s help.</p>
@@ -896,7 +897,7 @@ of lists.</p>
 
 <h2 id="disable-pair-quotes">Disable pair quotes</h2>
 
-<p>By default, each time you type <code class="language-plaintext highlighter-rouge">'</code>, WebStorm will pair the quote (creating two quotes). You can disable this by going to <strong>WebStorm &gt; Preferences &gt; Editor &gt; Smartkeys</strong>. Clear the <strong>Insert pair quotes</strong> check box.</p>
+<p>By default, each time you type <code>'</code>, WebStorm will pair the quote (creating two quotes). You can disable this by going to <strong>WebStorm &gt; Preferences &gt; Editor &gt; Smartkeys</strong>. Clear the <strong>Insert pair quotes</strong> check box.</p>
 
 
     <div class="tags">
@@ -914,10 +915,11 @@ of lists.</p>
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2020 Your company. All rights reserved. <br />
-<span>Page last updated:</span> March 20, 2016<br/> Site last generated: Apr 3, 2020 <br />
+<span>Page last updated:</span> March 20, 2016<br/> Site last generated: Apr 6, 2020 <br />
 <p><img src="images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
+<script src="/sampledocsite/js/prism.js"></script>
 </footer>
 
 
@@ -930,5 +932,12 @@ of lists.</p>
     </div>
 
 </body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-162550995-2','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
 
 </html>
